@@ -56,3 +56,14 @@ Rekomendasi dengan Asumsi:
     <li>Bila di asumsikan bahwa pelanggan menelpon untuk melakukan konfirmasi pemesanan, maka bisa dilakukan proses konfirmasi pemesanan dari pelanggan memberikan pengingat kepada penjual untuk segera melakukan konfirmasi ketersediaan barang dan kesiapaan pengiriman kepada bagian pengiriman atau kurir. (bisa dengan aplikasi atau ditambahkan pada petugas tertentu).</li>
     <li>Bila di asumsikan bahwa penjual menelpon untuk melakukan konfirmasi kesediaan pesanan dan barang siap di kirim, maka bisa dilakukan proses otomatisasi saat penjual konfirmasi kesediaan barang, langsung barang disiapkan untuk di kirim pada hari yang sama dan mengirimkan konfirmasi untuk kurir mengirimkan.</li>
 </ol>
+
+## Data Pre-Processing
+### Data Cleansing
+- Dilakukan handle outliers pada feature Discount yang menghasilkan 8604 baris data
+- Dilakukan standardization/normalization pada tiga feature yaitu: Cost, Discount dan Weight dikarenakan memiliki nilai variance dan standard deviation yang tinggi
+- Merubah nilai kategorik menjadi numerik pada feature Gender dan Importance menggunakan Label Encoding, dan menggunakan One Hots Encoding pada feature Warehouse dan Shipment
+- Proportion of minority >40% sehingga tidak perlu dilakukan handle class imbalance
+
+### Feature Engineering
+- Menghapus feature ID, Warehouse dan Shipment
+- Feature yang bisa ditambahkan : waktu pengiriman, alamat customer, alamat warehouse, musim/cuaca, kapasitas pengiriman per-hari, dan traffic route
